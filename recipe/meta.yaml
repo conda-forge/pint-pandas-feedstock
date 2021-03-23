@@ -1,5 +1,5 @@
 {% set name = "Pint-Pandas" %}
-{% set version = "0.1" %}
+{% set version = "0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c415256474b89ad0e11db6afcb742022757bfb6a6f3195018985682199c54162
+  sha256: 6f60d2e80ac102e0f94addb9206e0f6cca5ee42f0b7f8930d8c798002e41fa87
 
 build:
   number: 0
   noarch: python
   script:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} 
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -32,8 +32,7 @@ test:
   imports:
     - pint_pandas
 
-  commands:
-    python -c "import pint_pandas; assert pint_pandas.__version__ == '{{ version }}'"
+  commands: python -c "import pint_pandas; assert pint_pandas.__version__ == '{{ version }}'"
 
 about:
   home: https://github.com/hgrecco/pint-pandas
