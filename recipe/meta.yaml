@@ -10,7 +10,7 @@ source:
   sha256: 154c05ebe3a295abe8c177a90317bae887d37ea5b88813a38e10e1d64fd1589d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
@@ -19,14 +19,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.6
     - setuptools_scm
     - setuptools
   run:
-    - python >=3.7
+    - python >=3.6
     - setuptools
-    - pint >=0.13
-    - pandas >=1.0.4
+    - pint >=0.17
+    - pandas >=1.2
 
 test:
   imports:
