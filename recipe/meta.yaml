@@ -1,5 +1,5 @@
 {% set name = "Pint-Pandas" %}
-{% set version = "0.4" %}
+{% set version = "0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 58eb37dabcfb62e9b2fe21df1a59f1371e6d007f3ee5f1403f00489d8b11548d
+  sha256: 48ec96d457f802a347763dee1d3e1a273f11f90e4e595df17fd44613dd14a61c
 
 build:
   number: 0
