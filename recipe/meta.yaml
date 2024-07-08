@@ -24,8 +24,8 @@ requirements:
     - setuptools >=61
   run:
     - python >=3.9
-    - pint >=0.21
-    - pandas >=1.5
+    - pint >=0.24
+    - pandas >=2.2
     - packaging
 
 test:
