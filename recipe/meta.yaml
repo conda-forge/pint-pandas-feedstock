@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pint_pandas-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pint_pandas-{{ version }}.tar.gz
   sha256: ec6bd1ab9c826d40fbd78ed05e1b014f7251319e0fe3f48312523accaf816b5e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
@@ -19,16 +19,18 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools_scm >=3.4.3
     - setuptools >=61
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - pint >=0.24
     - pandas >=2.2
     - packaging
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pint_pandas
 
