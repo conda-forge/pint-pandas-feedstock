@@ -1,5 +1,6 @@
 {% set name = "Pint-Pandas" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pint_pandas-{{ version }}.tar.gz
-  sha256: f1106215a682593f535a89696688fec88a6fac3b32ffa9fe94c307e252bcb588
+  sha256: 876714f3be5a67c2a9b85dd3c33352dae70f8a52af353be4dffee3375f4ba883
 
 build:
   number: 0
@@ -25,8 +26,8 @@ requirements:
   run:
     - python >={{ python_min }}
     - pint >=0.24
-    - pandas >=2.2
-    - packaging
+    - pandas >=3.0
+    - packaging >=26.0
 
 test:
   requires:
